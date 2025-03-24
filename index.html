@@ -13,7 +13,7 @@
             padding: 0;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 50px auto;
             background: white;
             padding: 20px;
@@ -27,6 +27,7 @@
         }
         h1 {
             color: #333;
+            font-size: 28px;
         }
         p {
             color: #666;
@@ -35,7 +36,7 @@
         .cta-button {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 20px;
             color: white;
             background: #007bff;
@@ -47,13 +48,65 @@
         .cta-button:hover {
             background: #0056b3;
         }
+        .form-container {
+            margin-top: 30px;
+            text-align: right;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            margin-top: 20px;
+            line-height: 200px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>יועץ משכנתאות - הדרך החכמה לבית שלך</h1>
-        <p>חסוך עשרות אלפי שקלים עם ייעוץ מקצועי ואישי. התאמה מלאה לצרכים שלך!</p>
+        <h1>משכנתא חכמה - חוסכים כסף, מגיעים לבית!</h1>
+        <p>אתה עומד לקחת משכנתא? אל תעשה את זה לבד! תן למומחים שלנו לחסוך לך עשרות אלפי שקלים עם תכנון פיננסי נכון.</p>
+        
+        <div class="image-placeholder">תמונה של בית מרשים</div>
+        
+        <h2>למה לבחור בנו?</h2>
+        <ul style="text-align: right;">
+            <li>ניסיון של שנים בליווי משכנתאות</li>
+            <li>תכנון פיננסי חכם ומותאם אישית</li>
+            <li>חיסכון מוכח של עשרות אלפי שקלים</li>
+            <li>ליווי אישי עד קבלת המפתח</li>
+        </ul>
+        
         <a href="https://wa.me/YOUR_NUMBER" class="cta-button">שיחת ייעוץ חינם</a>
+        
+        <h2>צור קשר עכשיו!</h2>
+        <div class="form-container">
+            <form>
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <input type="tel" name="phone" placeholder="טלפון" required>
+                <textarea name="message" placeholder="ספר לנו איך נוכל לעזור לך"></textarea>
+                <button type="submit">שלח</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
