@@ -331,60 +331,27 @@
         </section>
 
         <section class="contact-form">
-    <h2>בואו נדבר על המשכנתא שלכם</h2>
-    <form id="contactForm" action="https://script.google.com/macros/s/AKfycbwIuUFusDs3ba55YqMyiIT2a_QHAPwoWxCIg-74qIEYjiwRd5fGphyX_B3Xpox21mWy/exec" method="POST" onsubmit="sendData(event)">
-        <div class="form-group">
-            <label for="name">שם מלא 👤</label>
-            <input type="text" id="name" name="name" required placeholder="הזינו שם מלא">
-        </div>
-        <div class="form-group">
-            <label for="phone">מספר טלפון ☎️</label>
-            <input type="text" id="phone" name="phone" required placeholder="הזינו מספר טלפון">
-        </div>
-        <div class="form-group">
-            <label for="email">כתובת אימייל 📧</label>
-            <input type="email" id="email" name="email" required placeholder="הזינו כתובת אימייל">
-        </div>
-        <div class="form-group">
-            <label for="message">הודעה נוספת 📮</label>
-            <textarea id="message" name="message" placeholder="הזינו הודעה נוספת אם יש"></textarea>
-        </div>
-        <button type="submit" class="submit-btn">שלח בקשת ייעוץ</button>
-    </form>
-</section>
-
-<script>
-    function sendData(event) {
-        event.preventDefault(); // כדי לא לרענן את הדף
-
-        // שליחה ל-POST
-        const formData = new FormData(document.getElementById('contactForm'));
-        const data = {
-            name: formData.get('name'),
-            phone: formData.get('phone'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
-
-        fetch('https://script.google.com/macros/s/AKfycbwIuUFusDs3ba55YqMyiIT2a_QHAPwoWxCIg-74qIEYjiwRd5fGphyX_B3Xpox21mWy/exec', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert('הפרטים נשלחו בהצלחה');
-        })
-        .catch(error => {
-            console.error('שגיאה:', error);
-            alert('הייתה שגיאה בשליחת הנתונים');
-        });
-    }
-</script>
-
-
+            <h2>בואו נדבר על המשכנתא שלכם</h2>
+            <form id="contactForm" action="https://formspree.io/f/your-form-endpoint" method="POST">
+                <div class="form-group">
+                    <label for="name"> שם מלא 👤</label>
+                    <input type="text" id="name" name="name" required placeholder="הזינו שם מלא">
+                </div>
+                <div class="form-group">
+                    <label for="phone"> מספר טלפון ☎️</label>
+                    <input type="nomber" id="phone" name="phone" required placeholder="הזינו מספר טלפון">
+                </div>
+                <div class="form-group">
+                    <label for="email">כתובת אימייל 📧</label>
+                    <input type="email" id="email" name="email" required placeholder="הזינו כתובת אימייל">
+                </div>
+                <div class="form-group">
+                    <label for="message">הודעה נוספת 📮</label>
+                    <textarea id="message" name="message" placeholder="הזינו הודעה נוספת אם יש"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">שלח בקשת ייעוץ</button>
+            </form>
+        </section>
 
         <section class="cta-section">
             <h2>אל תחמיצו את ההזדמנות!</h2>
