@@ -45,14 +45,7 @@
             margin-bottom: 40px;
         }
         .hero-content {
-            opacity: 0;
-            transform: translateX(100%);
-            transition: opacity 1.5s linear, transform 1.5s ease-in;
-        }
-
-        .hero-content.loaded {
-            opacity: 1;
-            transform: translateX(0);
+            flex: 1;
         }
         .hero-image {
             flex: 1;
@@ -268,17 +261,6 @@
                     אנחנו לא רק יועצי משכנתאות. אנחנו השותפים שלכם במסע להגשמת החלום הגדול ביותר - רכישת בית. 
                     עם ניסיון של יותר מ-15 שנה, אנחנו מביאים לכם פתרונות פיננסיים מתקדמים שיחסכו לכם עשרות אלפי שקלים.
                 </p>
-
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const heroContent = document.querySelector(".hero-content");
-            if (heroContent) {
-                heroContent.classList.add("loaded");
-            } else {
-                console.error("לא נמצא אלמנט עם המחלקה .hero-content");
-            }
-        });
-    </script>
 
                 <div style="margin-bottom: 20px;"></div>
 
