@@ -337,7 +337,7 @@
 
         <section class="contact-form">
     <h2>בואו נדבר על המשכנתא שלכם</h2>
-    <form id="contactForm" action="https://formspree.io/f/mvgkqppd" method="POST" onsubmit="submitForm(event)">
+    <form id="contactForm" action="https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjHjdY7ggjHvjQQAOrRcZ6cWLgCfDbRkcAeeultvRot8AHDT28fVfYewn-EwV6w_UPiQAnbQQ7quyLkzcytwK4-KXWGy6lUXPgWVDzHn8gvYy9zl-Zu03nDxL8p65P2Vc-80HBYeT81RiR2yP04lFl4Bfxn6HVzIJJrjw-yN9xvQ-DpCS4CXgrnG64rIvIdTjY_Q2uuUlkrxTuhmep61M8smX1gvyDTQwpon5p3Zeh4MWsOJJOL5fhTZzmNPkSdrvO-BzKXezGt0wubdDPRb_qafuFk2g&lib=M1btxvN7izy4qcJHLlQIPVNtsg3inH_Vi" method="POST" onsubmit="submitForm(event)">
         <div class="form-group">
             <label for="name">שם מלא 👤</label>
             <input type="text" id="name" name="name" required placeholder="הזינו שם מלא">
@@ -363,24 +363,21 @@ function submitForm(event) {
     event.preventDefault();  // מונע את שליחת הטופס בצורה רגילה (ללא רענון הדף)
     
     const form = document.getElementById("contactForm");
-
-    // שולח את הנתונים ב-ajax (אסינכרוני) ל-Formspree
+    
+    // שולח את הנתונים ב-ajax (אסינכרוני)
     fetch(form.action, {
         method: "POST",
         body: new FormData(form)
     })
-    .then(response => response.json())  // אם התקבלה תשובה, להמיר ל-json
-    .then(data => {
-        // אם הבקשה הצליחה
-        alert("הטופס נשלח בהצלחה!");
+    .then(() => {
         form.reset();  // מנקה את כל השדות בטופס אחרי שליחה
     })
     .catch(error => {
-        // אם אירעה שגיאה
         console.error("אירעה שגיאה", error);
     });
 }
 </script>
+
 
 
         <section class="cta-section">
