@@ -344,7 +344,7 @@
         </div>
         <div class="form-group">
             <label for="phone">מספר טלפון ☎️</label>
-            <input type="nomber" id="phone" name="phone" required placeholder="הזינו מספר טלפון">
+            <input type="text" id="phone" name="phone" required placeholder="הזינו מספר טלפון">
         </div>
         <div class="form-group">
             <label for="email">כתובת אימייל 📧</label>
@@ -363,16 +363,20 @@ function submitForm(event) {
     event.preventDefault();  // מונע את שליחת הטופס בצורה רגילה (ללא רענון הדף)
     
     const form = document.getElementById("contactForm");
-    
-    // שולח את הנתונים ב-ajax (אסינכרוני)
+
+    // שולח את הנתונים ב-ajax (אסינכרוני) ל-Formspree
     fetch(form.action, {
         method: "POST",
         body: new FormData(form)
     })
-    .then(() => {
+    .then(response => response.json())  // אם התקבלה תשובה, להמיר ל-json
+    .then(data => {
+        // אם הבקשה הצליחה
+        alert("הטופס נשלח בהצלחה!");
         form.reset();  // מנקה את כל השדות בטופס אחרי שליחה
     })
     .catch(error => {
+        // אם אירעה שגיאה
         console.error("אירעה שגיאה", error);
     });
 }
